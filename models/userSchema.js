@@ -22,6 +22,10 @@ var userSchema = mongoose.Schema({
         position: {
             type: String,
             default: "Admin"
+        },
+        houseName:{
+            type:String,
+            required: true
         }
 });
 

@@ -1,6 +1,7 @@
 //User route
 module.exports = (app,passport)=>{
     var User = require('../models/userSchema');
+    var Notif = require('../models/eventSchema');
     app.post('/member/register',(req,res,next)=>{
         // console.log('register');
         passport.authenticate('local-signup',(err,user,info)=>{
@@ -16,12 +17,17 @@ module.exports = (app,passport)=>{
             }
         })(req, res, next);
     });
+    //return all members in users schema
     app.get('/member/all',(req,res,next)=>{
         User.find({},(err,docs)=>{
             if (err) throw err;
             console.log('request all')
             res.send(docs);
-        })
+        });
+    })
+    // return all notifications
+    app.get('/member/notification',(req,res,next)=>{
+        Notif.find();
     })
     app.post('/member/login',(req,res,next)=>{
         console.log('at login auth');
