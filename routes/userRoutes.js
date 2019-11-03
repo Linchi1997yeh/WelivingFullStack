@@ -1,7 +1,7 @@
 //User route
 module.exports = (app,passport)=>{
     var User = require('../models/userSchema');
-    var Event = require('../models/eventSchema');
+    
     app.post('/member/register',(req,res,next)=>{
         // console.log('register');
         passport.authenticate('local-signup',(err,user,info)=>{
@@ -25,14 +25,17 @@ module.exports = (app,passport)=>{
             res.send(docs);
         });
     });
-    // return all notifications
-    app.get('/member/notification',(req,res,next)=>{
-        Event.find({},(err,docs)=>{
+    // single user profile data
+    app.get('/member/profile',(req,res,next)=>{
+        User.findOne({'email':req.body.email},(err,user)=>{
             if (err) throw err;
-            console.log('reques all events');
-            res.send(docs);
-        });
-    });
+            if(!user) {
+                console.log('No User Found');
+            }
+            res.send(user);
+        })
+    })
+
     app.post('/member/login',(req,res,next)=>{
         console.log('at login auth');
         passport.authenticate('local-login',(err,user,info)=>{
