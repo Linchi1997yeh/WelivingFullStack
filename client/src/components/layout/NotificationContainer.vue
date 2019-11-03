@@ -1,12 +1,11 @@
 <template>
     <div class="card">
-        <img class="event_pic" alt="Event Picture" src="../../assets/Examples/example_room.jpg">
+        <img class="event_pic" alt="Event Picture" v-bind:src="notification.photo">
         <div class="container">
             
-            <h2 class="event_title">Cooking Night</h2>
-            <h4 class="right">09/08/2019 17:00 <br>半伴 北車 一樓客廳</h4>
-            <h4 class="right"></h4>
-            <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam dicta ut cumque, quis delectus veniam </h5>
+            <h2 class="event_title">{{notification.title}}</h2>
+            <h4 class="right">{{notification.date}}<br>{{notification.place}}</h4>
+            <h5>{{notification.description}} </h5>
         
         </div>
         <button v-on:click.prevent="cardBtn">Join</button><button class="leftBorder" v-on:click.prevent="cardBtn">Share</button>
@@ -14,9 +13,11 @@
 </template>
 <script>
 export default {
+     props:["notification"],
+    
     methods:{
         cardBtn:function(){
-            alert("Sorry, this function is under maintenance :(\nPlease contact melolinchou@gmail.com")
+            alert("Sorry, this function is under maintenance :(\nPlease contact "+ this.$props.notification.host);
         }
     },
 }

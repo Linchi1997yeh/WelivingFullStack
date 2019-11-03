@@ -5,13 +5,6 @@
       <div v-for="notification in notifications" class="inline" :key="notification.id">
         <NotificationContainer v-bind:notification="notification" />
       </div>
-      
-      <NotificationContainer />
-      <NotificationContainer />
-      <NotificationContainer />
-      <NotificationContainer />
-      <NotificationContainer />
-      <NotificationContainer />
 
       <div class="hr-sect">End of Notifications</div>
     </div>
@@ -41,10 +34,11 @@ export default {
 </script>
 
 <style scoped>
+
 .content {
-  background: #fff;
+  background: #f4f4f4;
   background-position: right center;
-  height: 53px;
+  height: 80px;
   text-align: center;
 }
 .hr-sect {
