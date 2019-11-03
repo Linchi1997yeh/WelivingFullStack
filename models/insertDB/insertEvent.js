@@ -9,7 +9,7 @@ var obj1 = {
     photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWt0mgTD8sdhR5EsPqkhyklqGH83MtNXOuqqazm52-hRrWed_k3w&s',
     houseToShow: ['半伴西門','半伴敦南','半伴北車'],
     title:'Thanks Giving',
-    date: '18-11-2019',
+    date: new Date(2019, 11, 18),
     description: 'Dinner Party',
     host: 'host1@gmail.com',
     phoneNumber: 091234567
@@ -20,7 +20,7 @@ var obj2 = {
     photo: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/christmas-quotes-1565117893.jpg?crop=0.671xw:1.00xh;0.204xw,0&resize=640:*',
     houseToShow: ['半伴西門','半伴敦南','半伴北車'],
     title:'Christmas Party',
-    date: '23-25-2019',
+    date: new Date(2019, 12, 23),
     description: 'Secret Santa',
     host: 'host2@gmail.com',
     phoneNumber: 091102967
@@ -31,7 +31,7 @@ var obj3 = {
     photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjOv4ABkr5I4FKxRCpsX2ZkNCor36Ct_5mAYJtm6GIsbsADIgvHQ&s',
     houseToShow: all,
     title:'New Year',
-    date: '30-12-2019',
+    date: new Date(2019, 12, 30),
     description: 'New Year Celebration',
     host: 'host3@gmail.com',
     phoneNumber: 095837567
@@ -42,7 +42,7 @@ var obj4 = {
     photo: 'https://chowpublicmarket.com/wp-content/uploads/2018/06/AdobeStock_83661912-1080x675.jpeg',
     houseToShow: all,
     title:'Cooking Night',
-    date: '18-11-2019',
+    date: new Date(2019, 11, 18),
     description: 'Learn to Cook with professionals',
     host: 'host4@gmail.com',
     phoneNumber: 0912049267
@@ -53,7 +53,7 @@ var obj5 = {
     photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ-JDYpzk3kuMw4C-xQuOmv1yZ_2AVipqJovikqxAgG6bre9Fv&s',
     houseToShow: ['半伴敦南'],
     title:'恭喜',
-    date: '18-11-2019',
+    date: new Date(2019, 11, 18),
     description: '有緣世界第一',
     host: 'host5@gmail.com',
     phoneNumber: 091947567
@@ -64,7 +64,7 @@ var obj6 = {
     photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfN6JKHbB_5wnKPePcqp8W3v0ZvESGRVLf7eVfDeNAmgaCLQhrPw&s',
     houseToShow: ['半伴北車'],
     title:'租金未繳',
-    date: '18-11-2019',
+    date: new Date(2019, 11, 18),
     description: '胡炳軍',
     host: 'host6@gmail.com',
     phoneNumber: 0918654567
@@ -75,7 +75,7 @@ var obj7 = {
     photo: 'https://previews.123rf.com/images/andreypopov/andreypopov1510/andreypopov151000071/45703699-happy-male-janitor-with-cleaning-equipments-mopping-floor.jpg',
     houseToShow: ['半伴西門'],
     title:'清洗廁所',
-    date: '18-11-2019',
+    date: new Date(2019, 11, 18),
     description: '負責人：Alfred Lo',
     host: 'host7@gmail.com',
     phoneNumber: 091232667

@@ -14,7 +14,7 @@ class PostService{
                     data.map(event=>({
                         type:event.type,
                         place:event.place,
-                        date:event.date,
+                        date:new Date(event.date),
                         photo:event.photo,
                         houseToShow:event.houseToShow,
                         title:event.title,

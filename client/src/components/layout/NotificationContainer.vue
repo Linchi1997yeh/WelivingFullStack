@@ -4,7 +4,7 @@
         <div class="container">
             
             <h2 class="event_title">{{notification.title}}</h2>
-            <h4 class="right">{{notification.date}}<br>{{notification.place}}</h4>
+            <h4 class="right">{{formatedDate}}<br>{{notification.place}}</h4>
             <h5>{{notification.description}} </h5>
         
         </div>
@@ -13,8 +13,15 @@
 </template>
 <script>
 export default {
-     props:["notification"],
-    
+    data(){
+        return{
+            formatedDate:""
+        }
+    },
+    props:["notification"],
+    created(){
+        this.formatedDate =  `${this.$props.notification.date.getDate()}/${this.$props.notification.date.getMonth()}/${this.$props.notification.date.getFullYear()}` 
+    },
     methods:{
         cardBtn:function(){
             alert("Sorry, this function is under maintenance :(\nPlease contact "+ this.$props.notification.host);
