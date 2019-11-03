@@ -1,13 +1,13 @@
 <template>
   <header class="header">
     <div class="container inline">
-      <router-link to="#" class="title">
+      <router-link to="notification" class="title">
         <div class="logo">
           <img src="../../assets/icons/apartner_logo.png">
         </div>
       </router-link>
 
-      <router-link to="/" class="right"><i class="paper plane outline icon"></i></router-link>
+      <button v-on:click.prevent="messageBtn" class="right"><i class="paper plane outline icon"></i></button>
       </div>
     
   </header>
@@ -23,6 +23,11 @@ export default {
       
     };
   },
+  methods:{
+    messageBtn:function(){
+      alert("Sorry this function is still under maintenance");
+    }
+  }
 };
 </script>
 
@@ -39,6 +44,12 @@ export default {
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-height: 60px;
+}
+
+button{
+  text-decoration: none;
+  border:none;
+  background: #f4f4f4;
 }
 
 .logo{
