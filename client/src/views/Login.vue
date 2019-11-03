@@ -8,7 +8,7 @@
         
         <input placeholder="Email" type="text" v-model="email" /><br>
         <input placeholder="Password" type="password" v-model="password" /><br>
-        <button v-on:click="createPost">Login</button>
+        <button v-on:click="Login">Login</button>
         <p class="signup">
           <router-link to="/signup" class="loginlink">Forgot password?</router-link>
           |
@@ -25,28 +25,34 @@ import PostService from '../PostService';
 export default {
   data() {
     return {
-      posts: [],
+      loginResponse: [],
       email: "",
-      password: ""
+      password: "",
     };
   },
   async created() {
-    try{
-      this.posts = await PostService.getPosts();
-      if (this.posts.valid==true){
-                this.$router.go("/home");
-      }else{
-        alert("Invalid account or password");
-      }
-    } catch(err){
-      this.error = err.message;
-    }
+    // try{
+    //   this.posts = await PostService.getPosts();
+    //   if (this.posts.valid==true){
+    //             this.$router.go("/home");
+    //   }else{
+    //     alert("Invalid account or password");
+    //   }
+    // } catch(err){
+    //   this.error = err.message;
+    // }
   },
   methods: {
-    async createPost(){
-      await PostService.insertPost(this.text);
-      this.posts = await PostService.getPosts();
+    async Login(){
+      this.loginResponse = await PostService.memberLogin(this.email,this.password);
+      alert(this.loginResponse.valid);
+      if(this.loginResponse.valid){
+        //sucess
+        alert(this.loginResponse.valid);
+        this.$router.go('/notification');
+      }
     }
+
   }
   
 };
