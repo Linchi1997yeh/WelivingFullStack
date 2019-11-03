@@ -1,7 +1,7 @@
 //User route
 module.exports = (app,passport)=>{
     var User = require('../models/userSchema');
-    var Notif = require('../models/eventSchema');
+    var Event = require('../models/eventSchema');
     app.post('/member/register',(req,res,next)=>{
         // console.log('register');
         passport.authenticate('local-signup',(err,user,info)=>{
@@ -24,11 +24,15 @@ module.exports = (app,passport)=>{
             console.log('request all')
             res.send(docs);
         });
-    })
+    });
     // return all notifications
     app.get('/member/notification',(req,res,next)=>{
-        Notif.find();
-    })
+        Event.find({},(err,docs)=>{
+            if (err) throw err;
+            console.log('reques all events');
+            res.send(docs);
+        });
+    });
     app.post('/member/login',(req,res,next)=>{
         console.log('at login auth');
         passport.authenticate('local-login',(err,user,info)=>{

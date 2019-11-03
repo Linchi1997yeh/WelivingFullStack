@@ -44,6 +44,7 @@ app.use(passport.session());
 // routes
 // require('./components/house/routes')(app);
 require('./routes/userRoutes')(app, passport);
+require('./routes/houseRoutes')(app);
 
 
 
