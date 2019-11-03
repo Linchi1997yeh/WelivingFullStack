@@ -1,28 +1,66 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent/>
+    <ion-app>
+      <Header/>
+      <ion-vue-router/>
+      <ToolBar/>
+    </ion-app>
   </div>
 </template>
 
+
 <script>
-import PostComponent from './components/PostComponent.vue'
+import Header from "./components/layout/Header"
+import ToolBar from "./components/layout/ToolBar"
+import PostService from "./PostService"
 
 export default {
-  name: 'app',
+  name:"app",
   components: {
-    PostComponent
+    Header,
+    ToolBar
+  },
+  data() {
+    return {
+      posts: [],
+      username: "",
+      password: "",
+      valid: Boolean
+    };
+  },
+  created() {
+  
+      
+  },
+  methods: {
+    async createPost(){
+      await PostService.insertPost(this.text);
+      this.posts = await PostService.getPosts();
+    }
   }
-}
+  
+};
+  
+
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+    font-family: Microsoft JhengHei, Helvetica, sans-serif;
+    color:#494848;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #f4f4f4;
+    line-height: 1.4;
+}
+.container {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 98%;
+  
 }
 </style>
