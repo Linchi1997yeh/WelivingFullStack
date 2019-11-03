@@ -1,6 +1,6 @@
 <template>
   <div class="profileCard">
-    <img v-bind:src="emptyRoom.photos[0]" alt="House Picture" class="cropProfilePic" />
+    <img v-bind:src="emptyRoom.photo[0]" alt="House Picture" class="cropProfilePic" />
     <div class="cardContainer">
       <table class="parent" style="height:60px;">
         <tr>

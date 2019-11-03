@@ -28,6 +28,27 @@ class PostService{
             }
         })
     }
+    // get all Rooms
+    static getRooms(){
+        return new Promise(async(resolve, reject)=>{
+            try {
+                const res = await axios.get(dataurl+'rooms');
+                const datas = res.data;
+                resolve(
+                    datas.map(data=>({
+                        houseName:data.houseName,
+                        roomName:data.roomName,
+                        price:data.price,
+                        photo:data.photo,
+                        currentLiving:data.currentLiving,
+                        capacity:data.capacity,
+                    }))
+                );
+            } catch(err){
+                reject(err);
+            }
+        })
+    }
     //Get Posts
     static getPosts(){
         return new Promise(async(resolve, reject)=>{
