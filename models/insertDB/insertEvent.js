@@ -1,5 +1,5 @@
-var req = require('./backendAPI.js');
-var db = new req("shareAPP");
+var req = require('./MongObj');
+var db = new req("shareApp");
 
 const all = ["半伴西門","半伴敦南","半伴北車","半伴市府","半伴後山埤","半伴東門","半伴民生"];
 
@@ -85,8 +85,7 @@ var obj7 = {
 
 db.return_dbname();
 db.showURL();
-db.insert_many("one", obj, obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10, obj11, obj12, obj13, obj14, obj15, obj16, obj17, obj18, obj19);
-//db.delete_one("GGGGGG", obj);
+db.insert_many("events", obj1, obj2, obj3, obj4, obj5, obj6, obj7)
 //db.update_one("GGGGGG",{name:"Dio"},{stend:"ZA warudo"});
 //db.update_many("GGGGGG", { name: "Dio" }, { stend: "Za warudo" });
 //db.find_data("GGGGGG", obj2);

@@ -1,27 +1,26 @@
 const mongoose = require('mongoose');
 
+
 var contractSchema = mongoose.Schema({
-        local:{
-            username: {
-                type: String,
-                required: true
-            },
-            houseID: {
-                type: String,
-                required: true
-            },
-            roomID: {
-                type: String,
-                required: true
-            },
-            startDate: {
-                type: Date,
-                required: false
-            },
-            endDate: {
-                type: Date,
-                required: false
-            }
+        email: {
+            type: String,
+            required: true
+        },
+        roomName: {
+            type: String,
+            required: true
+        },
+        startDate: {
+            type: Date,
+            required: true
+        },
+        endDate: {
+            type: Date,
+            required: true
+        },
+        duration: {
+            type: Number,
+            required: true
         }
 });
 module.exports = mongoose.model('contract',contractSchema);

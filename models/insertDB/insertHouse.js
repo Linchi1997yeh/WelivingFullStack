@@ -1,5 +1,5 @@
-var req = require('./backendAPI.js');
-var db = new req("shareAPP");
+var req = require('./MongObj');
+var db = new req("shareApp");
 
 var house1 = {
     Address: "台北市萬華區康定路25巷41弄",
