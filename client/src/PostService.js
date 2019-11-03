@@ -28,6 +28,45 @@ class PostService{
             }
         })
     }
+    // get all Rooms
+    static getRooms(){
+        return new Promise(async(resolve, reject)=>{
+            try {
+                const res = await axios.get(dataurl+'rooms');
+                const datas = res.data;
+                resolve(
+                    datas.map(data=>({
+                        houseName:data.houseName,
+                        roomName:data.roomName,
+                        price:data.price,
+                        photo:data.photo,
+                        currentLiving:data.currentLiving,
+                        capacity:data.capacity,
+                    }))
+                );
+            } catch(err){
+                reject(err);
+            }
+        })
+    }
+    static memberLogin(email,password){
+        return new Promise(async(resolve, reject)=>{
+            try {
+                const res = await axios.post(newurl+'login',{
+                    email,
+                    password
+                });
+                const data = res.data
+                resolve(data.map(res=>({
+                    valid:res.valid,
+                    email:res.email,
+                    password: res.password
+                })));
+            } catch (err) {
+                reject(err);
+            }
+        })
+    }
     //Get Posts
     static getPosts(){
         return new Promise(async(resolve, reject)=>{
@@ -59,12 +98,6 @@ class PostService{
     static memberRegister(username,email,password){
         return axios.post(newurl+'register',{
             username,
-            email,
-            password
-        })
-    }
-    static memberLogin(email,password){
-        return axios.post(newurl+'login',{
             email,
             password
         })

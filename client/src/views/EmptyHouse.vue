@@ -18,6 +18,8 @@
 
 <script>
 import EmptyHouseContainer from "../components/layout/EmptyHouseContainer";
+import PostService from '../PostService';
+
 export default {
   name: "emptyHouse",
   components: {
@@ -26,13 +28,20 @@ export default {
   data() {
     return {
       emptyHouses: [],
-      emptyRooms:[]
+      emptyRooms:[],
+      error:''
     };
   },
   props: ["email", "password"],
-  created() {
-    //get request for all notifications
-  },
+  async created() {
+    //get request for all Rooms
+    try {
+      this.emptyRooms = await PostService.getRooms();
+    } catch (err) {
+      this.error = err.message;
+    }
+    
+  }
   
 };
 </script>

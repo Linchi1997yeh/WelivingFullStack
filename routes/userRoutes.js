@@ -42,16 +42,28 @@ module.exports = (app,passport)=>{
             console.log('in login-auth')
             if (err) return next(err);
             if (!user){
-                // registration failed user already taken
-                console.log('user not found or invalid password');
-                res.send('user not found or invalid password');
-            }else{
-                //registration complete
+                // login failed
                 var package = {
-                    'valid': true,
-                    'msg':'login-success',
-                    'redirect': '/profile'
+                    valid : false,
+                    email:req.body.email,
+                    password: req.body.password,
+                    error:'email not found or invalid password'
+                    // 'msg':'login-success',
+                    // 'redirect': '/profile'
                 }
+                res.send(package);
+                console.log('user not found or invalid password');
+                // res.send('user not found or invalid password');
+            }else{
+                //login success
+                console.log('login Success');
+                var package = [{
+                    valid : true,
+                    email:req.body.email,
+                    password: req.body.password
+                    // 'msg':'login-success',
+                    // 'redirect': '/profile'
+                }]
                 res.send(package);
             }
         })(req, res, next);

@@ -22,10 +22,8 @@ module.exports = passport =>{
         function(req,email,password,done){
             process.nextTick(
                 ()=>{
-                // console.log('nexttick');
-                console.log(email+'1');
-                console.log(password);
-                console.log(req.body.username);
+                // console.log(email+'1');
+                // console.log(password);
                 User.findOne({'local.email': email}, (err, user)=>{
                     if(err) return done(err);
                     if (user){
@@ -58,17 +56,18 @@ module.exports = passport =>{
             console.log(email);
             console.log(password);
             User.findOne({'email':email},(err,user)=>{
-                console.log('inside find one');
                 console.log(user);
                 if(err) return done(err);
                 if(!user){
+                    console.log('passport-Email not found');
                     return done(null,false)
                 }
-                console.log('passport login1');
+                
                 if(!user.validPass(password,user.password)){
-                    return(null, false)
+                    console.log('passport-InvalidPass');
+                    return donde(null, false)
                 }
-                done(null,user);
+                return done(null,user);
                 
             })
         })
