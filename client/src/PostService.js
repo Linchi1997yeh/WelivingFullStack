@@ -19,7 +19,8 @@ class PostService{
                         houseToShow:event.houseToShow,
                         title:event.title,
                         description:event.description,
-                        phoneNumber:event.phoneNumber
+                        phoneNumber:event.phoneNumber,
+                        host:event.host
                     }))
                 );
             } catch(err){
