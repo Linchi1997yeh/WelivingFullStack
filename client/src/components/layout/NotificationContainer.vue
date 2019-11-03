@@ -20,7 +20,7 @@ export default {
     },
     props:["notification"],
     created(){
-        this.formatedDate =  `${this.$props.notification.date.getDate()}/${this.$props.notification.date.getMonth()}/${this.$props.notification.date.getFullYear()}` 
+        this.formatedDate =  `${this.$props.notification.date.getDate()}/${this.$props.notification.date.getMonth()+1}/${this.$props.notification.date.getFullYear()}` 
     },
     methods:{
         cardBtn:function(){
