@@ -2,7 +2,31 @@ import axios from 'axios'
 
 // const url = 'http://localhost:5000/member/login/';
 const newurl = 'http://localhost:3000/member/'
+const dataurl = 'http://localhost:3000/data/'
 class PostService{
+    // Get all events
+    static getEvents(){
+        return new Promise(async(resolve, reject)=>{
+            try {
+                const res = await axios.get(dataurl+'events');
+                const data = res.data;
+                resolve(
+                    data.map(event=>({
+                        type:event.type,
+                        place:event.place,
+                        date:event.date,
+                        photo:event.photo,
+                        houseToShow:event.houseToShow,
+                        title:event.title,
+                        description:event.description,
+                        phoneNumber:event.phoneNumber
+                    }))
+                );
+            } catch(err){
+                reject(err);
+            }
+        })
+    }
     //Get Posts
     static getPosts(){
         return new Promise(async(resolve, reject)=>{

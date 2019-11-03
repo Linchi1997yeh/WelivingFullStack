@@ -13,6 +13,7 @@
 
 <script>
 import NotificationContainer from "../components/layout/NotificationContainer";
+import PostService from '../PostService';
 export default {
   name: "notifications",
   components: {
@@ -20,15 +21,23 @@ export default {
   },
   data() {
     return {
-      notifications: []
+      notifications: [],
+      error:''
     };
   },
   props: ["email", "password"],
-  created() {
+  async created() {
     //get request for all notifications
+    try {
+      this.notifications = await PostService.getEvents();
+    } catch (err) {
+      this.error = err.message;
+    }
   },
   methods: {
-    onScroll() {}
+    async getNotification(){
+      this.notifications = await PostService.getEvents();
+    }
   }
 };
 </script>
