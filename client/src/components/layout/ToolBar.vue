@@ -3,9 +3,9 @@
     <div class="container inline">
         <router-link to="/notification" class="toolBar"><i class="bullhorn icon"></i></router-link>
         <router-link to="/emptyhouse" class="toolBar"><i class="home icon"></i></router-link>
-        <router-link to="#" class="toolBar"><i class="clipboard outline icon"></i></router-link>
-        <router-link to="#" class="toolBar"><i class="wrench icon"></i></router-link>
-        <router-link to="#" class="toolBar"><i class="user icon"></i></router-link>
+        <router-link to="/querycontract" class="toolBar"><i class="clipboard outline icon"></i></router-link>
+        <router-link to="reportproblem" class="toolBar"><i class="wrench icon"></i></router-link>
+        <router-link to="/personalprofile" class="toolBar"><i class="user icon"></i></router-link>
     </div>
     
   </footer>
@@ -44,13 +44,19 @@ export default {
 }
 
 .toolBar{
-  margin:6%;
+  /* margin:6%; */
   text-decoration: none;
   font-size:22px;
   padding:15px 0px;
+  max-width:100%;
+  object-fit: scale-down;
+  display: inline-block;
+  width:20%;
+  text-align: center;
 }
 .toolBar i{
-  max-width:100%;
+  /* max-width:100%; */
+  width:20%;
   height:auto;
 }
 

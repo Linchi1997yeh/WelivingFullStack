@@ -4,10 +4,10 @@
     <div class="cardContainer">
       <table class="parent" style="height:60px;">
         <tr>
-          <td class="child" width="20%">
+          <td class="child" width="25%">
             <img src="../../assets/Examples/example_avatar.png" alt="Host Avatar" class="image-cropper" />
           </td>
-          <td class="child" width="50%">
+          <td class="child" width="80%">
             <h2>{{emptyRoom.houseName}} Room {{emptyRoom.roomName}}</h2>
             <h4>NT${{emptyRoom.price}}/月</h4>
           </td>
@@ -44,10 +44,10 @@ export default {
   props: ["emptyRoom"],
   methods:{
         callBtn:function(){
-            alert("Please call "+ this.$props.emptyRoom.phone);
+            alert("Please call Emma at 0973412388");
         },
         emailBtn:function(){
-            alert("Please email "+ this.$props.emptyRoom.email);
+            alert("Please email Emma at apartner_emma@gmail.com");
         }
     },
 };
@@ -105,7 +105,7 @@ h2{
 button{
     width:50%;
     border:0px;
-    height:40px;
+    height:50px;
     background-color: #fff;
     color:#797D7F;
     font-size: 14px;
@@ -115,5 +115,8 @@ button{
 button:hover{
     background-color: #f4f4f4;
     color:#000;
+}
+.leftBorder{
+    border-left:1px solid #eaeaea;
 }
 </style>

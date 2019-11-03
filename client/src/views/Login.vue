@@ -66,8 +66,6 @@ export default {
     margin-top:20%;
     margin-bottom: 30%;
     overflow: hidden;
-    /* position: relative; */
-    /* width: 80%; */
     text-align: center;
     display: inline-block;
 }
@@ -76,6 +74,7 @@ export default {
   height:100%;
   width:100%;
   overflow:hidden;
+  text-align:center;
 }
 input,select{
     border: 1px solid #fff;
@@ -86,7 +85,8 @@ input,select{
     padding: 6px 15px;
     margin: 10px;
     color:#fff;
-    width: 200px;
+    max-width:100%;
+    width:55%;
   }
   input:focus {
     color: #fff;
@@ -105,7 +105,8 @@ button{
     padding: 6px 15px;
     margin: 10px;
     color:#fff;
-    width: 200px;
+    max-width:100%;
+    width:55%;
 }
 .logo{
   max-width:40%;
