@@ -34,7 +34,7 @@ var eventSchema = mongoose.Schema({
         required: true
     },
     phoneNumber: {
-        type: String,
+        type: Number,
         required: true
     }
 });
