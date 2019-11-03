@@ -2,10 +2,12 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import VueResource from 'vue-resource'
-import Ionic from '@ionic/vue';
-import '@ionic/core/css/ionic.bundle.css';
+import vuescroll from 'vuescroll'
+// import Ionic from '@ionic/vue';
+// import '@ionic/core/css/ionic.bundle.css';
 
-Vue.use(Ionic);
+// Vue.use(Ionic);
+Vue.use(vuescroll);
 Vue.config.productionTip=false;
 
 Vue.use(VueResource);

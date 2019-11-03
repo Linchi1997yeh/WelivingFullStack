@@ -7,7 +7,7 @@
         </div>
       </router-link>
 
-        <router-link to="#" class="right"><i class="paper plane outline icon"></i></router-link>
+      <router-link to="/" class="right"><i class="paper plane outline icon"></i></router-link>
       </div>
     
   </header>
@@ -42,23 +42,20 @@ export default {
 }
 
 .logo{
-  height:10%;
-  width:50%;
+  height:auto;
+  max-width:50%;
   margin:0 0 0 5px;
   display: inline-block;
-  
 }
 .logo img{
-  line-height: 1.5;
+  height:auto;
+  max-width:90%;
   display: inline-block;
   vertical-align: middle;
-  font-size:20px;
 }
 
 .inline{
   display: inline-block;
-  /* line-height: 70px;
-  height: 70px; */
 }
 
 .right{
@@ -66,6 +63,11 @@ export default {
   text-decoration: none;
   font-size:20px;
   padding:5px 0px;
+  height:auto;
+}
+.right i{
+  max-width:100%;
+  height:auto;
 }
 
 
