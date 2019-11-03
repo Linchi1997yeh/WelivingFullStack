@@ -35,7 +35,7 @@ export default {
   color: #797d7f;
   text-align: left;
   padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 0  8px 0 rgba(0, 0, 0, 0.2);
   max-height: 60px;
 }
 
@@ -48,6 +48,10 @@ export default {
   text-decoration: none;
   font-size:22px;
   padding:15px 0px;
+}
+.toolBar i{
+  max-width:100%;
+  height:auto;
 }
 
 

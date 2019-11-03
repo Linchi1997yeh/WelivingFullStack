@@ -1,10 +1,8 @@
 <template>
-  <div id="app">
-    <ion-app>
+  <div>
       <Header/>
-      <ion-vue-router/>
+      <router-view/>
       <ToolBar/>
-    </ion-app>
   </div>
 </template>
 
@@ -51,6 +49,7 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* overflow: hidden; */
 }
 body {
     background: #f4f4f4;
@@ -61,6 +60,5 @@ body {
   overflow: hidden;
   position: relative;
   width: 98%;
-  
 }
 </style>

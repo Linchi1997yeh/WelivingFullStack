@@ -56,7 +56,7 @@ export default {
 .content{
   margin: auto;
     margin-top:20%;
-    margin-bottom: 20%;
+    margin-bottom: 30%;
     overflow: hidden;
     /* position: relative; */
     /* width: 80%; */
@@ -100,10 +100,15 @@ button{
     width: 200px;
 }
 .logo{
-  width:40%;
+  max-width:40%;
+  height:auto;
   margin: 10%;
   text-align: center;
   display: inline-block;
+}
+.logo img{
+  max-width:100%;
+  height:auto;
 }
 .signup{
   color:#fff;

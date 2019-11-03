@@ -1,11 +1,12 @@
 import Vue from 'vue';
-import { IonicVueRouter } from '@ionic/vue';
+import VueRouter from 'vue-router';
 import Login from '../views/Login.vue'
+import Notification from '../views/Notification.vue'
 
-Vue.use(IonicVueRouter);
+Vue.use(VueRouter);
 
 
-export default new IonicVueRouter({
+export default new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes : [
@@ -15,6 +16,11 @@ export default new IonicVueRouter({
       name: 'login',
       component: Login
     },
+    {
+      path: '/notification',
+      name: 'notification',
+      component: Notification
+    }
     
   ]
 });
