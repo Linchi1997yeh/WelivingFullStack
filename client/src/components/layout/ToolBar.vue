@@ -44,13 +44,19 @@ export default {
 }
 
 .toolBar{
-  margin:6%;
+  /* margin:6%; */
   text-decoration: none;
   font-size:22px;
   padding:15px 0px;
+  max-width:100%;
+  object-fit: scale-down;
+  display: inline-block;
+  width:20%;
+  text-align: center;
 }
 .toolBar i{
-  max-width:100%;
+  /* max-width:100%; */
+  width:20%;
   height:auto;
 }
 

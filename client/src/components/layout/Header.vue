@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="container inline">
-      <router-link to="notification" class="title">
+      <router-link to="/notification" class="title">
         <div class="logo">
           <img src="../../assets/icons/apartner_logo.png">
         </div>
@@ -53,16 +53,19 @@ button{
 }
 
 .logo{
-  height:auto;
+  max-height:60px;
   max-width:50%;
   margin:0 0 0 5px;
   display: inline-block;
+  object-fit: scale-down;
 }
 .logo img{
-  height:auto;
+  /* height:auto; */
+  max-height:45px;
   max-width:90%;
   display: inline-block;
   vertical-align: middle;
+  object-fit: scale-down;
 }
 
 .inline{

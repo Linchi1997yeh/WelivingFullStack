@@ -77,7 +77,7 @@ export default {
   text-align: left;
   font-family: arial;
   display: inline-block;
-  margin:5px;
+  margin:0 0 20px 0;
 }
 h3,h2{
     display:inline-block;

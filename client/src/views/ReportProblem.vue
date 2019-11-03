@@ -89,7 +89,8 @@ input{
     border-radius: 2px;
     font-size: 14px;
     height: 35px;
-    width:100%;
+    max-width:100%;
+    width:85%;
     padding: 15px 15px;
     margin: 10px;
     color:#fff;
@@ -108,7 +109,8 @@ input{
     border-radius: 2px;
     font-size: 14px;
     height: 180px;
-    width:100%;
+    max-width:100%;
+    width:85%;
     padding: 15px 15px;
     margin: 10px;
     color:#fff;
