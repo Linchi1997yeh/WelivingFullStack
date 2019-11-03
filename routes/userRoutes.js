@@ -57,13 +57,13 @@ module.exports = (app,passport)=>{
             }else{
                 //login success
                 console.log('login Success');
-                var package = [{
+                var package = {
                     valid : true,
                     email:req.body.email,
                     password: req.body.password
                     // 'msg':'login-success',
                     // 'redirect': '/profile'
-                }]
+                }
                 res.send(package);
             }
         })(req, res, next);

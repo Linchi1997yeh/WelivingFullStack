@@ -26,10 +26,6 @@ export default {
       valid: Boolean
     };
   },
-  created() {
-  
-      
-  },
   methods: {
     async createPost(){
       await PostService.insertPost(this.text);

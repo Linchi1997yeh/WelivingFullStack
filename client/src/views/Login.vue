@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import PostService from '../PostService';
+// import PostService from '../PostService';
 
 export default {
   data() {
@@ -28,24 +28,26 @@ export default {
       loginResponse: [],
       email: "",
       password: "",
+      error:''
     };
-  },
-  async created() {
-    // try{
-    //   this.posts = await PostService.getPosts();
-    //   if (this.posts.valid==true){
-    //             this.$router.go("/home");
-    //   }else{
-    //     alert("Invalid account or password");
-    //   }
-    // } catch(err){
-    //   this.error = err.message;
-    // }
   },
   methods: {
     async Login(){
-      this.loginResponse = await PostService.memberLogin(this.email,this.password);
-      alert(this.loginResponse.valid);
+      let currObj = this;
+      // const newurl = 'http://localhost:3000/member/login'
+      await this.axios.post('http://localhost:3000/member/login',{
+                    email: this.email,
+                    password: this.password
+            })
+            .then((response)=>{
+              currObj.loginResponse = response.data;
+            })
+            .catch(err=>{
+              currObj.error = err;
+            })
+
+      // this.loginResponse = await PostService.memberLogin(this.email,this.password);
+      // alert(this.loginResponse.valid);
       if(this.loginResponse.valid){
         //sucess
         alert(this.loginResponse.valid);
