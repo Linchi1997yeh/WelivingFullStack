@@ -44,10 +44,10 @@ export default {
   props: ["emptyRoom"],
   methods:{
         callBtn:function(){
-            alert("Please call "+ this.$props.emptyRoom.phone);
+            alert("Please call Emma at 0973412388");
         },
         emailBtn:function(){
-            alert("Please email "+ this.$props.emptyRoom.email);
+            alert("Please email Emma at apartner_emma@gmail.com");
         }
     },
 };
@@ -115,5 +115,8 @@ button{
 button:hover{
     background-color: #f4f4f4;
     color:#000;
+}
+.leftBorder{
+    border-left:1px solid #eaeaea;
 }
 </style>

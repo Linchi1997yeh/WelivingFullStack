@@ -3,9 +3,9 @@
     <div class="container inline">
         <router-link to="/notification" class="toolBar"><i class="bullhorn icon"></i></router-link>
         <router-link to="/emptyhouse" class="toolBar"><i class="home icon"></i></router-link>
-        <router-link to="#" class="toolBar"><i class="clipboard outline icon"></i></router-link>
-        <router-link to="#" class="toolBar"><i class="wrench icon"></i></router-link>
-        <router-link to="#" class="toolBar"><i class="user icon"></i></router-link>
+        <router-link to="/querycontract" class="toolBar"><i class="clipboard outline icon"></i></router-link>
+        <router-link to="reportproblem" class="toolBar"><i class="wrench icon"></i></router-link>
+        <router-link to="/personalprofile" class="toolBar"><i class="user icon"></i></router-link>
     </div>
     
   </footer>

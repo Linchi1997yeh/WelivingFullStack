@@ -55,7 +55,7 @@ export default {
   flex-basis: 100%;
   align-items: center;
   color: #c7c6c5;
-  margin: 10px 0px 80px 0px;
+  margin: 20px 0px 80px 0px;
 }
 .hr-sect::before,
 .hr-sect::after {
