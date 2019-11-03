@@ -19,7 +19,7 @@ async function reqGetAll(type){
         obj = House;
     }else if (type=='room'){
         obj = Room;
-    }else{
+    }else if (type=='user'){
         obj = User;
     }
     await obj.find({}, async(err,docs)=>{

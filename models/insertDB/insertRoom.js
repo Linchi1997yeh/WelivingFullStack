@@ -133,7 +133,11 @@ var room14 = {
     capacity: 1
 };
 
-db.return_dbname();
-db.showURL();
-db.insert_many("rooms", room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12, room13, room14);
+function room(){
+    db.return_dbname();
+    db.showURL();
+    db.insert_many("rooms", room1, room2, room3, room4, room5, room6, room7, room8, room9, room10, room11, room12, room13, room14);
+}
+
+module.exports.room = room;
 

@@ -26,6 +26,11 @@ var contract3 = {
     duration: 2
 };
 
-db.return_dbname();
-db.showURL();
-db.insert_many("contracts",contract1, contract2, contract3 );
+
+function contract(){
+    db.return_dbname();
+    db.showURL();
+    db.insert_many("contracts",contract1, contract2, contract3 );
+}
+
+module.exports.contract = contract;

@@ -11,6 +11,13 @@ module.exports= (app)=>{
         console.log(docs);
         res.send(docs);
     })
+    // get all users
+    app.get('/data/users',async (req,res,next)=>{
+        const docs = await dbsearch.reqGetAll('user');
+        console.log('hello')
+        console.log(docs);
+        res.send(docs);
+    })
     // get all contracts
     app.get('/data/contracts',async (req,res,next)=>{
         const docs = await dbsearch.reqGetAll('contract');

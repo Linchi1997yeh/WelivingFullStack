@@ -44,6 +44,10 @@ var house7 = {
     HouseName: "半伴民生"
 };
 
-db.return_dbname();
-db.showURL();
-db.insert_many("houses", house1, house2, house3, house4, house5, house6, house7);
+function house(){
+    db.return_dbname();
+    db.showURL();
+    db.insert_many("houses", house1, house2, house3, house4, house5, house6, house7);
+}
+
+module.exports.house = house;

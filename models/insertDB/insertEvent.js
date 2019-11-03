@@ -82,35 +82,10 @@ var obj7 = {
 }
 
 
+function event(){
+    db.return_dbname();
+    db.showURL();
+    db.insert_many("events", obj1, obj2, obj3, obj4, obj5, obj6, obj7)
+}
 
-db.return_dbname();
-db.showURL();
-db.insert_many("events", obj1, obj2, obj3, obj4, obj5, obj6, obj7)
-//db.update_one("GGGGGG",{name:"Dio"},{stend:"ZA warudo"});
-//db.update_many("GGGGGG", { name: "Dio" }, { stend: "Za warudo" });
-//db.find_data("GGGGGG", obj2);
-//db.find("GGGGGG");
-//db.sort("GGGGGG",1);
-//db.find_limit("GGGGGG", 2);
-//db.find_skip_limit("GGGGGG",2,3);
-//db.delete_many("GGGGGG", obj);
-// var obj ={
-//     house_name:'BCool',
-//     theme:'Share Your Idea',
-//     about:'An original, non-technical writing or composition',
-//     host_name:[{name:'Micheal heap',profile_pic:'http://3.227.148.97:3000/api/get_personal_photo?id=1',position:'Chief'}],
-//     photos:[
-//         "http://3.227.148.97:3000/api/get_house_photo?id=bcool_1",
-//         "http://3.227.148.97:3000/api/get_house_photo?id=bcool_2",
-//         "http://3.227.148.97:3000/api/get_house_photo?id=bcool_3",
-//         "http://3.227.148.97:3000/api/get_house_photo?id=bcool_4",
-//         "http://3.227.148.97:3000/api/get_house_photo?id=bcool_5"
-//     ],
-//     sleepingArrangement:[],
-//     events:[],
-//     location:'No. 100號, Lane 100, Sichuan Road, Xitun District, Taichung City, 100',
-//     apartmentInfo:['living room','kitchen','garbage disposal'],
-//     price:12000,
-//     reviews:4,
-//     similar:[]
-// }
+module.exports.event = event;
