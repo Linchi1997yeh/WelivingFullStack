@@ -92,4 +92,12 @@ button:hover{
 .leftBorder{
     border-left:1px solid #eaeaea;
 }
+h1{
+    /* text-align: center; */
+    margin-bottom:15px;
+}
+h4{
+    font-size: 18px;
+    line-height: 2em;
+}
 </style>

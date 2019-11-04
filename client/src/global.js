@@ -2,7 +2,7 @@ let email = '';
 let password = '';
 const dataUrl = 'http://localhost:3000/data/';
 const userUrl = 'http://localhost:3000/member/';
-// let loggedin=Boolean;
+let currentPage='';
 
 class manageGlobal {
 
@@ -28,9 +28,13 @@ class manageGlobal {
         email = '';
         password = '';
     }
-    // static logout(){
-    //     loggedin=false;
-    // }
+    static setCurrentPage(cp){
+        currentPage=cp;
+    }
+    static getCurrentPage(){
+        return currentPage;
+    }
+    
 }
 
 export default manageGlobal

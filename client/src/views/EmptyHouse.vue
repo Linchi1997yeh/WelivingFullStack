@@ -3,7 +3,7 @@
     <section class="content"></section>
     <div class="container">
         
-      <div v-for="emptyRoom in emptyRooms" class="inline" :key="emptyRoom">
+      <div v-for="emptyRoom in emptyRooms" class="inline" :key="emptyRoom.id">
         <EmptyHouseContainer v-bind:emptyRoom="emptyRoom" />
       </div>
         <!-- <EmptyHouseContainer/>
@@ -37,6 +37,7 @@ export default {
     //get request for all Rooms
     try {
       this.emptyRooms = await PostService.getRooms();
+      this.emptyRooms=this.emptyRooms.slice(0,6);
     } catch (err) {
       this.error = err.message;
     }

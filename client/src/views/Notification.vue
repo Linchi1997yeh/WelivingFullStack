@@ -14,6 +14,8 @@
 <script>
 import NotificationContainer from "../components/layout/NotificationContainer";
 import PostService from '../PostService';
+
+
 export default {
   name: "notifications",
   components: {
