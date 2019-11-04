@@ -10,27 +10,12 @@
 <script>
 import Header from "./components/layout/Header"
 import ToolBar from "./components/layout/ToolBar"
-import PostService from "./PostService"
 
 export default {
   name:"app",
   components: {
     Header,
     ToolBar
-  },
-  data() {
-    return {
-      posts: [],
-      username: "",
-      password: "",
-      valid: Boolean
-    };
-  },
-  methods: {
-    async createPost(){
-      await PostService.insertPost(this.text);
-      this.posts = await PostService.getPosts();
-    }
   }
   
 };

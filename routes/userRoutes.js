@@ -26,12 +26,13 @@ module.exports = (app,passport)=>{
         });
     });
     // single user profile data
-    app.get('/member/profile',(req,res,next)=>{
+    app.post('/member/profile',(req,res,next)=>{
         User.findOne({'email':req.body.email},(err,user)=>{
             if (err) throw err;
             if(!user) {
                 console.log('No User Found');
             }
+            console.log(user);
             res.send(user);
         })
     })

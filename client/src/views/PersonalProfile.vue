@@ -3,9 +3,10 @@
         <section class="content"></section>
         <div class="form">
             <img src="../assets/Examples/example_avatar.png" alt="Host Avatar" class="image-cropper" />
-            <h1>Alfred Loh</h1>
-            <h4>alfredloh@gmail.com</h4><br>
-            
+            <h1>{{this.userData.userName}}</h1>
+            <h4>{{this.userData.email}}</h4>
+            <h4>{{this.userData.houseName}}</h4>
+            <h4>{{this.userData.position}}</h4><br>
         </div>
         <button v-on:click.prevent="editprofile">
             Edit Profile
@@ -17,16 +18,15 @@
 </template>
 
 <script>
+import manageGlobal from '../global';
 export default {
     data(){
         return{
-            myContract:"",
-            formatedStartDate:"",
-            formatedEndDate:""
+            userData:[],
+            email:manageGlobal.getEmail(),
+            password:manageGlobal.getPassword,
+            error:''
         }
-    },
-    created(){
-        //put code here
     },
     methods:{
         editprofile:function(){
@@ -35,7 +35,25 @@ export default {
         },
         changepass:function(){
             alert("不准改");
+        },
+        async getUserData(){
+            const url = manageGlobal.getUserUrl()+'profile';
+            alert(url);
+            let currObj =this;
+            await this.axios.post(url,{
+                email: this.email
+            })
+            .then(response=>{
+                currObj.userData = response.data;
+            })
+            .catch(err=>{
+                currObj.error = err
+            })
         }
+    },
+    async created(){
+        //put code here
+        await this.getUserData();
     }
 }
 </script>

@@ -22,6 +22,10 @@ class manageGlobal {
     static getUserUrl(){
         return userUrl;
     }
+    static clearUser(){
+        email = '';
+        password = '';
+    }
 }
 
 export default manageGlobal
