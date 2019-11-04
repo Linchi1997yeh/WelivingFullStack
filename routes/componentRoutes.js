@@ -24,11 +24,6 @@ module.exports= (app)=>{
         console.log('hello')
         console.log(docs);
         res.send(docs);
-        // Contract.find({},(err,docs)=>{
-        //     if (err) throw err;
-        //     console.log(docs);
-        //     res.send(docs);
-        // })
     })
     // get all houses
     app.get('/data/houses',async (req,res,next)=>{
@@ -36,13 +31,8 @@ module.exports= (app)=>{
         console.log('hello')
         console.log(docs);
         res.send(docs);
-        // House.find({},(err,docs)=>{
-        //     if (err) throw err;
-        //     console.log(docs);
-        //     res.send(docs);
-        // })
     })
-    app.post('/data/personalContract', async (req,res,next)=>{
+    app.post('/data/queryContract', async (req,res,next)=>{
         console.log(req.body.email);
         Contract.findOne({'email': req.body.email},(err,user)=>{
             if(!user){

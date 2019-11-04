@@ -21,7 +21,7 @@
 
 <script>
 // import PostService from '../PostService';
-
+import manageGlobal from '../global';
 export default {
   data() {
     return {
@@ -45,7 +45,10 @@ export default {
             .catch(err=>{
               currObj.error = err;
             })
-
+      manageGlobal.changeEmail(this.email);
+      manageGlobal.changePassword(this.password);
+      alert(manageGlobal.getEmail());
+      alert(manageGlobal.getPassword());
       // this.loginResponse = await PostService.memberLogin(this.email,this.password);
       // alert(this.loginResponse.valid);
       if(this.loginResponse.valid){

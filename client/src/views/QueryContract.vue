@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import manageGlobal from '../global';
 export default {
     data(){
         return{
@@ -26,7 +27,7 @@ export default {
             formatedStartDate:"",
             formatedEndDate:"",
             error:'',
-            email:'test1@gmail.com'
+            email: manageGlobal.getEmail()
         }
     },
     methods:{
@@ -37,9 +38,9 @@ export default {
             alert("Call Emma at 0953452134");
         },
         async queryContract(){
-            const newurl = 'http://localhost:3000/data/personalContract'
+            const url = manageGlobal.getDataUrl() +'queryContract'
             let currObj = this;
-            await this.axios.post(newurl,{
+            await this.axios.post(url,{
                 email: this.email
             })
             .then((response)=>{
