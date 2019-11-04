@@ -58,20 +58,26 @@ export default {
 </script>
 
 <style scoped>
+*{
+  overflow:hidden;
+  max-height:100%;
+   margin: 0;
+    padding: 0;
+}
 .content{
-  margin: auto;
-    margin-top:20%;
-    margin-bottom: 30%;
+    margin: auto;
+    margin-top:27%;
+    margin-bottom: 39%;
     overflow: hidden;
     text-align: center;
     display: inline-block;
 }
 .loginBackground{
-  background: url('../assets/backgrounds/login.jpg') center /cover;
-  height:100%;
-  width:100%;
+  background: url('../assets/backgrounds/login.jpg') center/cover;
+  
   overflow:hidden;
   text-align:center;
+  
 }
 input,select{
     border: 1px solid #fff;

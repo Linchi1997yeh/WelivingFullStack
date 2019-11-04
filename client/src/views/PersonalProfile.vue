@@ -3,10 +3,11 @@
         <section class="content"></section>
         <div class="form">
             <img src="../assets/Examples/example_avatar.png" alt="Host Avatar" class="image-cropper" />
-            <h1>{{this.userData.userName}}</h1>
-            <h4>{{this.userData.email}}</h4>
-            <h4>{{this.userData.houseName}}</h4>
-            <h4>{{this.userData.position}}</h4><br>
+            <h1>{{this.userData.username}}</h1>
+            <h4>{{this.userData.houseName}} 的 </h4>
+            &nbsp;<h4> {{this.userData.position}}</h4><br>
+            <!-- <h4>{{this.userData.email}}</h4> -->
+            
         </div>
         <button v-on:click.prevent="editprofile">
             Edit Profile
@@ -55,6 +56,7 @@ export default {
     async created(){
         //put code here
         await this.getUserData();
+        
     }
 }
 </script>
@@ -68,7 +70,6 @@ export default {
 }
 .form{
     background:#fff;
-    height:auto;
     padding:5%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
      text-align: center;
@@ -94,7 +95,6 @@ h4{
     color:#797D7F;
     display: inline-block;
     margin-top:10px;
-    margin-bottom:50px;
     text-align: center;
 }
 h1{

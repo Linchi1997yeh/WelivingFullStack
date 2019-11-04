@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <Login v-if="this.show == false "/>
+  <div class="login">
+      <Login v-if="this.show == false " />
       <Header v-if="this.show == true "/>
       <router-view v-if="this.show == true "/>
       <ToolBar v-if="this.show == true "/>
@@ -50,16 +50,21 @@ export default {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
     /* overflow: hidden; */
 }
 body {
     background: #f4f4f4;
     line-height: 1.4;
+    height:100%;
 }
 .container {
   margin: auto;
   overflow: hidden;
   position: relative;
   width: 98%;
+}
+.login{
+  height:100%;
 }
 </style>
