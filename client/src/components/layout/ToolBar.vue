@@ -13,13 +13,11 @@
 
 
 <script>
+
 export default {
   name: "ToolBar",
   components: {},
-  data() {
-    return {
-    };
-  },
+  
 };
 </script>
 

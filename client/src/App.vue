@@ -1,8 +1,9 @@
 <template>
   <div>
-      <Header/>
-      <router-view/>
-      <ToolBar/>
+      <Login v-if="this.show == false "/>
+      <Header v-if="this.show == true "/>
+      <router-view v-if="this.show == true "/>
+      <ToolBar v-if="this.show == true "/>
   </div>
 </template>
 
@@ -10,12 +11,31 @@
 <script>
 import Header from "./components/layout/Header"
 import ToolBar from "./components/layout/ToolBar"
+import Login from "./views/Login"
+import globalService from './global.js';
 
 export default {
   name:"app",
   components: {
     Header,
-    ToolBar
+    ToolBar, 
+    Login
+  },data() {
+    return {
+      show:false,
+      to:"/notification",
+      from:"/"
+    };
+  },
+  
+  watch:{
+    $route(){
+      if(globalService.getEmail()==""){
+        this.show=false;
+      }else{
+        this.show=true;
+      }
+    }
   }
   
 };

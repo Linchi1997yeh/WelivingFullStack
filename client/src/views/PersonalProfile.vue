@@ -11,14 +11,15 @@
         <button v-on:click.prevent="editprofile">
             Edit Profile
         </button>
-        <button class="leftBorder" v-on:click.prevent="changepass">
-            Change Password
+        <button class="leftBorder" v-on:click.prevent="logout">
+            Log Out
         </button>
     </div>
 </template>
 
 <script>
 import manageGlobal from '../global';
+// import app from '../App.vue'
 export default {
     data(){
         return{
@@ -33,8 +34,9 @@ export default {
             //insert code here (send the form to backend)
             alert("不准改");
         },
-        changepass:function(){
-            alert("不准改");
+        logout:function(){
+            manageGlobal.changeEmail("");
+            this.$router.push("/");
         },
         async getUserData(){
             const url = manageGlobal.getUserUrl()+'profile';

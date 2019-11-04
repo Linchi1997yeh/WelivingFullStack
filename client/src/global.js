@@ -1,7 +1,9 @@
 let email = '';
 let password = '';
 const dataUrl = 'http://localhost:3000/data/';
-const userUrl = 'http://localhost:3000/member/'
+const userUrl = 'http://localhost:3000/member/';
+// let loggedin=Boolean;
+
 class manageGlobal {
 
     static changeEmail(newEmail){
@@ -26,6 +28,9 @@ class manageGlobal {
         email = '';
         password = '';
     }
+    // static logout(){
+    //     loggedin=false;
+    // }
 }
 
 export default manageGlobal
