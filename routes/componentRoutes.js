@@ -42,6 +42,27 @@ module.exports= (app)=>{
         //     res.send(docs);
         // })
     })
+    app.post('/data/personalContract', async (req,res,next)=>{
+        console.log(req.body.email);
+        Contract.findOne({'email': req.body.email},(err,user)=>{
+            if(!user){
+                console.log('user has not signed a contract yet');
+                var package = {
+                    // valid : false,
+                    email:req.body.email,
+                    // password: req.body.password,
+                    error:'user has not signed a contract yet'
+                    // 'msg':'login-success',
+                    // 'redirect': '/profile'
+                }
+                res.send(package);
+            }else{
+                console.log(user);
+                res.send(user);
+            }
+            
+        })
+    })
     // get all rooms
     app.get('/data/rooms',async(req,res,next)=>{
         const docs = await dbsearch.reqGetAll('room');

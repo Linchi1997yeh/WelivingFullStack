@@ -22,13 +22,12 @@
 export default {
     data(){
         return{
-            myContract:"",
+            myContract:[],
             formatedStartDate:"",
-            formatedEndDate:""
+            formatedEndDate:"",
+            error:'',
+            email:'test1@gmail.com'
         }
-    },
-    created(){
-        //put code here
     },
     methods:{
         continueContract:function(){
@@ -36,7 +35,29 @@ export default {
         },
         contact:function(){
             alert("Call Emma at 0953452134");
+        },
+        async queryContract(){
+            const newurl = 'http://localhost:3000/data/personalContract'
+            let currObj = this;
+            await this.axios.post(newurl,{
+                email: this.email
+            })
+            .then((response)=>{
+                currObj.myContract = response.data;
+            })
+            .catch(err=>{
+                currObj.error = err;
+            })
+            let sDate = new Date(this.myContract.startDate);
+            let eDate = new Date(this.myContract.endDate);
+            // alert(`${eDate.getDate()}/${eDate.getMonth()}/${eDate.getFullYear()}`);
+            this.formatedStartDate = `${sDate.getDate()}/${sDate.getMonth()}/${sDate.getFullYear()}`;
+            this.formatedEndDate = `${eDate.getDate()}/${eDate.getMonth()}/${eDate.getFullYear()}`;
         }
+    },
+    created(){
+        //put code here
+        this.queryContract();
     }
 }
 </script>

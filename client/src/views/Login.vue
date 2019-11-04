@@ -34,8 +34,8 @@ export default {
   methods: {
     async Login(){
       let currObj = this;
-      // const newurl = 'http://localhost:3000/member/login'
-      await this.axios.post('http://localhost:3000/member/login',{
+      const newurl = 'http://localhost:3000/member/login'
+      await this.axios.post(newurl,{
                     email: this.email,
                     password: this.password
             })
@@ -50,8 +50,8 @@ export default {
       // alert(this.loginResponse.valid);
       if(this.loginResponse.valid){
         //sucess
-        alert(this.loginResponse.valid);
-        this.$router.go('/notification');
+        // alert(this.loginResponse.valid);
+        this.$router.push('/notification');
       }
     }
 

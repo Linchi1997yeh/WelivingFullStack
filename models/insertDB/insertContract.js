@@ -2,7 +2,7 @@ var req = require('./MongObj');
 var db = new req("shareApp");
 
 var contract1 = {
-    email: "asd@gmail.com",
+    email: "test1@gmail.com",
     roomId: "", //to be filled
     roomName: "男生四人房A",
     startDate: new Date(2018, 2, 1),
@@ -10,7 +10,7 @@ var contract1 = {
     duration: 14
 };
 var contract2 = {
-    email: "qsc@gmail.com",
+    email: "test2@gmail.com",
     roomId: "", //to be filled
     roomName: "女生雙人房A",
     startDate: new Date(2018, 11, 31),
@@ -18,7 +18,7 @@ var contract2 = {
     duration: 12
 };
 var contract3 = {
-    email: "qwe@gmail.com",
+    email: "test3@gmail.com",
     roomId: "", //to be filled
     roomName: "男生四人房A",
     startDate: new Date(2019, 1, 31),
