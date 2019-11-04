@@ -38,12 +38,8 @@ module.exports= (app)=>{
             if(!user){
                 console.log('user has not signed a contract yet');
                 var package = {
-                    // valid : false,
                     email:req.body.email,
-                    // password: req.body.password,
                     error:'user has not signed a contract yet'
-                    // 'msg':'login-success',
-                    // 'redirect': '/profile'
                 }
                 res.send(package);
             }else{

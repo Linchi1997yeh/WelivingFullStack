@@ -38,7 +38,6 @@ export default {
         },
         async getUserData(){
             const url = manageGlobal.getUserUrl()+'profile';
-            alert(url);
             let currObj =this;
             await this.axios.post(url,{
                 email: this.email

@@ -51,7 +51,6 @@ export default {
             })
             let sDate = new Date(this.myContract.startDate);
             let eDate = new Date(this.myContract.endDate);
-            // alert(`${eDate.getDate()}/${eDate.getMonth()}/${eDate.getFullYear()}`);
             this.formatedStartDate = `${sDate.getDate()}/${sDate.getMonth()}/${sDate.getFullYear()}`;
             this.formatedEndDate = `${eDate.getDate()}/${eDate.getMonth()}/${eDate.getFullYear()}`;
         }

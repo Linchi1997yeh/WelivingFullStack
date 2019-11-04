@@ -45,17 +45,9 @@ export default {
             .catch(err=>{
               currObj.error = err;
             })
-      
-      // this.loginResponse = await PostService.memberLogin(this.email,this.password);
-      // alert(this.loginResponse.valid);
       if(this.loginResponse.valid){
-        //sucess
-        // alert(this.loginResponse.valid);
         manageGlobal.changeEmail(this.email);
         manageGlobal.changePassword(this.password);
-        alert(manageGlobal.getEmail());
-        alert(manageGlobal.getPassword());
-
         this.$router.push('/notification');
       }
     }
